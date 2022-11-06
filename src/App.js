@@ -7,6 +7,7 @@ import Login from './features/auth/Login'
 import DashLayout from './components/DashLayout'
 import Welcome from './features/auth/Welcome'
 import TestsList from './features/tests/TestsList'
+import UsersList from './features/users/UsersList'
 import StatisticsList from './features/statistics/StatisticsList'
 
 const App = () => {
@@ -39,6 +40,13 @@ const App = () => {
             <Route
               index
               element={<TestsList />}
+            />
+          </Route>
+          {/* Users routes */}
+          <Route path='users'>
+            <Route
+              index
+              element={<UsersList />}
             />
           </Route>
           {/* Statistics routes */}

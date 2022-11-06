@@ -1,9 +1,7 @@
 import { Outlet } from 'react-router-dom'
 
 const Layout = () => {
-  {
-    /* Render the children of the Outlet component */
-  }
+  // Render the children of the Outlet component
   return <Outlet />
 }
 

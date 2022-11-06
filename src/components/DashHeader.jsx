@@ -9,7 +9,7 @@ const DashHeader = () => {
         className='d-flex align-items-center text-secondary text-decoration-none navbar-brand'
       >
         <img
-          src='./logo192.png'
+          src='/logo192.png'
           alt='ADA Health logo'
           width='50'
         />

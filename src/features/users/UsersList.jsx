@@ -1,18 +1,18 @@
-import { useGetTestsQuery } from './testsApiSlice'
+import { useGetUsersQuery } from './usersApiSlice'
 import Spinner from '../../components/Spinner'
 import Error from '../../components/Error'
-import Test from './Test'
+import User from './User'
 
-const TestsList = () => {
-  // destructuring data from RTK tests generated hook
+const UsersList = () => {
+  // destructuring data from RTK users generated hook
   const {
-    // renamed data as tests
-    data: tests,
+    // renamed data as users
+    data: users,
     isLoading,
     isSuccess,
     isError,
     error,
-  } = useGetTestsQuery()
+  } = useGetUsersQuery()
 
   let content
 
@@ -23,13 +23,14 @@ const TestsList = () => {
   }
 
   if (isSuccess) {
-    const { ids } = tests
+    // ids is an array of users ids
+    const { ids } = users
 
     const tableContent = ids?.length
-      ? ids.map((testId) => (
-          <Test
-            key={testId}
-            testId={testId}
+      ? ids.map((userId) => (
+          <User
+            key={userId}
+            userId={userId}
           />
         ))
       : null
@@ -40,10 +41,11 @@ const TestsList = () => {
           <thead className='table-dark'>
             {/* columnas de la tabla */}
             <tr>
-              <th scope='col'>Id paciente</th>
-              <th scope='col'>Fecha de creación</th>
-              <th scope='col'>Referencia</th>
-              <th scope='col'>Resultado</th>
+              <th scope='col'>Número de identificación</th>
+              <th scope='col'>Nombres</th>
+              <th scope='col'>Apellidos</th>
+              <th scope='col'>EPS</th>
+              <th scope='col'>Rol</th>
               <th scope='col'>Editar</th>
             </tr>
           </thead>
@@ -52,8 +54,7 @@ const TestsList = () => {
       </div>
     )
   }
-
   return content
 }
 
-export default TestsList
+export default UsersList
