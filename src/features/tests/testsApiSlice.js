@@ -34,10 +34,43 @@ export const testsApiSlice = apiSlice.injectEndpoints({
         } else return [{ type: 'Test', id: 'LIST' }]
       },
     }),
+    addNewTest: builder.mutation({
+      query: (initialTest) => ({
+        url: '/tests',
+        method: 'POST',
+        body: {
+          ...initialTest,
+        },
+      }),
+      invalidatesTags: [{ type: 'Test', id: 'LIST' }],
+    }),
+    updateTest: builder.mutation({
+      query: (initialTest) => ({
+        url: '/tests',
+        method: 'PATCH',
+        body: {
+          ...initialTest,
+        },
+      }),
+      invalidatesTags: (result, error, arg) => [{ type: 'Test', id: arg.id }],
+    }),
+    deleteTest: builder.mutation({
+      query: ({ id }) => ({
+        url: `/tests`,
+        method: 'DELETE',
+        body: { id },
+      }),
+      invalidatesTags: (result, error, arg) => [{ type: 'Test', id: arg.id }],
+    }),
   }),
 })
 
-export const { useGetTestsQuery } = testsApiSlice
+export const {
+  useGetTestsQuery,
+  useAddNewTestMutation,
+  useUpdateTestMutation,
+  useDeleteTestMutation,
+} = testsApiSlice
 
 // returns the query result object
 export const selectTestsResult = testsApiSlice.endpoints.getTests.select()
