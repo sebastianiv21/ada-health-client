@@ -1,5 +1,5 @@
 import { useGetUsersQuery } from './usersApiSlice'
-import Spinner from '../../components/Spinner'
+import SpinnerScreen from '../../components/SpinnerScreen'
 import Error from '../../components/Error'
 import User from './User'
 
@@ -16,7 +16,7 @@ const UsersList = () => {
 
   let content
 
-  if (isLoading) content = <Spinner />
+  if (isLoading) content = <SpinnerScreen />
 
   if (isError) {
     content = <Error error={error} />

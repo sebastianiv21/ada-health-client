@@ -4,10 +4,10 @@ import { useNavigate } from 'react-router-dom'
 import { ROLES } from '../../config/roles'
 
 const NewUserForm = () => {
+  const navigate = useNavigate()
+
   const [addNewUser, { isLoading, isSuccess, isError, error }] =
     useAddNewUserMutation()
-
-  const navigate = useNavigate()
 
   return <div>NewUserForm</div>
 }

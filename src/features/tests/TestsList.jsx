@@ -1,5 +1,5 @@
 import { useGetTestsQuery } from './testsApiSlice'
-import Spinner from '../../components/Spinner'
+import SpinnerScreen from '../../components/SpinnerScreen'
 import Error from '../../components/Error'
 import Test from './Test'
 
@@ -16,7 +16,7 @@ const TestsList = () => {
 
   let content
 
-  if (isLoading) content = <Spinner />
+  if (isLoading) content = <SpinnerScreen />
 
   if (isError) {
     content = <Error error={error} />

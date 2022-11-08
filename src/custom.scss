@@ -4,8 +4,11 @@ $secondary: #272343;
 $dark: #495057;
 
 //////// TIPOGRAFIA ////////
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 $font-family-sans-serif: 'Roboto', sans-serif;
 
-@import '../node_modules/bootstrap/scss/bootstrap';
+$enable-negative-margins: true;
+
+@import '~bootstrap/scss/bootstrap.scss';
 
 //////// CUSTOM CSS ////////
