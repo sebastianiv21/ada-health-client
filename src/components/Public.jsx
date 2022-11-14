@@ -34,7 +34,7 @@ const Public = () => {
           </h5>
         </Col>
       </Row>
-      <Row className='mt-5 mb-auto'>
+      <Row className='mt-5'>
         <Col className='d-flex justify-content-center mt-5'>
           <Stack
             direction='horizontal'

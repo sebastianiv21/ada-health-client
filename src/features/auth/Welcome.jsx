@@ -11,7 +11,7 @@ const Welcome = () => {
   const content = (
     <section>
       <p>{today[0].toUpperCase() + today.substring(1)}</p>
-      <h1>Bienvenido!</h1>
+      <h1>Bienvenid@!</h1>
       <p>
         <Link to='/dash/tests'>Ver resultados de laboratorio</Link>
       </p>
