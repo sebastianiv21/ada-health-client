@@ -9,6 +9,6 @@ $font-family-sans-serif: 'Roboto', sans-serif;
 
 $enable-negative-margins: true;
 
-@import '~bootstrap/scss/bootstrap.scss';
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
 
 //////// CUSTOM CSS ////////
